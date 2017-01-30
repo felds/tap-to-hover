@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tap to hover</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents.min.js" integrity="sha256-zLlSfatOBSEd2c1AbcTLNKOyEZN0ktWbNVgSGCIFYL8=" crossorigin="anonymous"></script>
+  <style>
+  :root {
+    box-sizing: border-box;
+  }
+  :root * {
+    box-sizing: inherit;
+  }
+  .container {
+    margin: 4rem auto;
+    width: 400px;
+  }
+  .cell {
+    margin: .25rem;
+    padding: 1rem;
+    border: 1px solid pink;
+    background: rgba(255, 192, 203, 0.5);
+    border-radius: .5rem;
+  }
+  .cell._ftth-hover {
+    border-color: yellowgreen;
+    background: rgba(154, 205, 50, 0.5);
+  }
+  .cell.h {
+    border-color: deepskyblue;
+    background: rgba(0, 191, 255, 0.5);
+  }
+
+  .grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  .grid > * {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 30%;
+    flex: 1 0 30%;
+  }
+  </style>
+</head>
+
+<body>
+  <link rel="import" href="tap-to-hover.html">
+
+  <div class="container">
+    <h1>Custom class (.h)</h1>
+    <felds-tap-to-hover class="grid" hover-class="h">
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+    </felds-tap-to-hover>
+    <hr/>
+    <h1>Default class (._ftth-hover)</h1>
+    <felds-tap-to-hover class="grid">
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+      <div class="cell">Cell</div>
+    </felds-tap-to-hover>
+  </div>
+</body>
+</html>
