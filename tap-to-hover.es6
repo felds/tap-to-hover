@@ -11,7 +11,11 @@ document.registerElement('felds-tap-to-hover', class extends HTMLElement {
 
   _interact(e) {
     const className = this.getAttribute('hover-class') || '_ftth-hover'
-    const ch = this.children
+    const querySelector = this.getAttribute('query-selector')
+    const ch = querySelector
+      ? this.querySelectorAll(querySelector)
+      : this.children
+
     for (let i = 0; i < ch.length; i++) {
       const el = ch.item(i)
       e.path.indexOf(el) >= 0

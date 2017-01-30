@@ -33,7 +33,11 @@ document.registerElement('felds-tap-to-hover', function (_HTMLElement) {
     key: '_interact',
     value: function _interact(e) {
       var className = this.getAttribute('hover-class') || '_ftth-hover';
-      var ch = this.children;
+      var querySelector = this.getAttribute('query-selector');
+      var ch = querySelector ? this.querySelectorAll(querySelector) : this.children;
+
+      console.log(ch);
+
       for (var i = 0; i < ch.length; i++) {
         var el = ch.item(i);
         e.path.indexOf(el) >= 0 ? el.classList.add(className) : el.classList.remove(className);
