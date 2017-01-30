@@ -36,8 +36,6 @@ document.registerElement('felds-tap-to-hover', function (_HTMLElement) {
       var querySelector = this.getAttribute('query-selector');
       var ch = querySelector ? this.querySelectorAll(querySelector) : this.children;
 
-      console.log(ch);
-
       for (var i = 0; i < ch.length; i++) {
         var el = ch.item(i);
         e.path.indexOf(el) >= 0 ? el.classList.add(className) : el.classList.remove(className);
